@@ -7,6 +7,30 @@ public:
         // Make sure to mark as visited as soon as discovered so you don't visit a space more than once.
         // O(m x n)
 
+        // Better way to go through the direction options instead of the 4 ifs..
+
+        // int directions[4][2] = {
+        //     {-1, 0}, // up
+        //     {1, 0},  // down
+        //     {0, -1}, // left
+        //     {0, 1}   // right
+        // };
+
+        // for (auto& direction : directions) {
+        //     int newX = x + direction[0];
+        //     int newY = y + direction[1];
+
+        //     if (newX >= 0 && newX < grid.size() &&
+        //         newY >= 0 && newY < grid[0].size() &&
+        //         grid[newX][newY] == '1') {
+
+        //         grid[newX][newY] = '0';
+        //         visitLand.push({newX, newY});
+        //     }
+        // }
+
+
+        // Should probably use C++'s built in Pair instead of custom struct Point here
         struct Point { int x; int y; };
 
         int islands = 0;
